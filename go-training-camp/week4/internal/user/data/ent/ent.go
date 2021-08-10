@@ -5,7 +5,8 @@ package ent
 import (
 	"errors"
 	"fmt"
-	"go-geektime/ent/user"
+
+	"go-geektime/internal/user/data/ent/user"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"

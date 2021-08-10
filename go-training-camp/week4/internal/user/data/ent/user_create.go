@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"time"
 
-	"go-geektime/ent/user"
+	"go-geektime/internal/user/data/ent/user"
 
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"

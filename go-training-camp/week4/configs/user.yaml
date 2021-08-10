@@ -1,0 +1,4 @@
+sqlite:
+    addr: file:geektime?mode=memory&cache=shared&_fk=1
+grpc:
+    addr: ":9999"

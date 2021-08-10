@@ -4,9 +4,10 @@ package ent
 
 import (
 	"fmt"
-	"go-geektime/ent/user"
 	"strings"
 	"time"
+
+	"go-geektime/internal/user/data/ent/user"
 
 	"entgo.io/ent/dialect/sql"
 )

@@ -3,8 +3,8 @@
 package ent
 
 import (
-	"go-geektime/ent/schema"
-	"go-geektime/ent/user"
+	"go-geektime/internal/user/data/ent/schema"
+	"go-geektime/internal/user/data/ent/user"
 )
 
 // The init function reads all schema descriptors with runtime code

@@ -3,8 +3,9 @@
 package user
 
 import (
-	"go-geektime/ent/predicate"
 	"time"
+
+	"go-geektime/internal/user/data/ent/predicate"
 
 	"entgo.io/ent/dialect/sql"
 )

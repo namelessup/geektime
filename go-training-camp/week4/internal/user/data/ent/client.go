@@ -7,9 +7,8 @@ import (
 	"fmt"
 	"log"
 
-	"go-geektime/ent/migrate"
-
-	"go-geektime/ent/user"
+	"go-geektime/internal/user/data/ent/migrate"
+	"go-geektime/internal/user/data/ent/user"
 
 	"entgo.io/ent/dialect"
 	"entgo.io/ent/dialect/sql"

@@ -5,8 +5,9 @@ package ent
 import (
 	"context"
 	"fmt"
-	"go-geektime/ent/predicate"
-	"go-geektime/ent/user"
+
+	"go-geektime/internal/user/data/ent/predicate"
+	"go-geektime/internal/user/data/ent/user"
 
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
