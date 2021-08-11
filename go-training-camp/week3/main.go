@@ -20,6 +20,8 @@ func main() {
 	g, ctx := errgroup.WithContext(context.Background())
 	srvMux := http.NewServeMux()
 	srvMux.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
+		time.Sleep(30 * time.Second)
+		log.Println("http end!!!")
 		_, _ = fmt.Fprint(writer, "ok")
 	})
 
@@ -52,7 +54,7 @@ func main() {
 
 	g.Go(func() error {
 		quit := make(chan os.Signal, 1)
-		signal.Notify(quit, syscall.SIGHUP, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT)
+		signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 		<-quit
 		log.Println("接收到正常退出信号！开始关闭服务")
 		_ = srv.Shutdown(ctx)
