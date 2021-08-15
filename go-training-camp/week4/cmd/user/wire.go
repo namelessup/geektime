@@ -5,6 +5,7 @@ package main
 import (
 	"go-geektime/internal/user/biz"
 	"go-geektime/internal/user/data"
+	"go-geektime/internal/user/server"
 	"go-geektime/internal/user/service"
 
 	"github.com/google/wire"
@@ -12,6 +13,6 @@ import (
 )
 
 func depend() (*grpc.Server, func(), error) {
-	wire.Build(service.UserSet, biz.UserSet, data.UserSet, UserSet)
+	wire.Build(service.UserSet, biz.UserSet, data.UserSet, server.UserSet)
 	return &grpc.Server{}, nil, nil
 }

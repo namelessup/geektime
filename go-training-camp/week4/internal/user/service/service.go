@@ -18,7 +18,7 @@ type UserService struct {
 }
 
 func NewUserService(ub *biz.UserBiz) (*UserService, func(), error) {
-	return &UserService{ub: ub}, nil, nil
+	return &UserService{ub: ub}, func() {}, nil
 }
 
 func (u *UserService) CreateUser(ctx context.Context, request *v1.UserRequest) (*v1.UserReply, error) {

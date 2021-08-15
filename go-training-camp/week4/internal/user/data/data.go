@@ -17,6 +17,7 @@ type UserData struct {
 	client *ent.Client
 }
 
+// TODO 也可以依赖配置
 func NewUserData() (data *UserData, clean func(), err error) {
 	client, err := ent.Open(dialect.SQLite, conf.Config.SQLite.Addr)
 	if err != nil {

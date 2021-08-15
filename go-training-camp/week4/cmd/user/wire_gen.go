@@ -8,6 +8,7 @@ package main
 import (
 	"go-geektime/internal/user/biz"
 	"go-geektime/internal/user/data"
+	"go-geektime/internal/user/server"
 	"go-geektime/internal/user/service"
 	"google.golang.org/grpc"
 )
@@ -35,14 +36,14 @@ func depend() (*grpc.Server, func(), error) {
 		cleanup()
 		return nil, nil, err
 	}
-	server, cleanup4, err := NewGRPC(userService)
+	grpcServer, cleanup4, err := server.NewUserGPRCServer(userService)
 	if err != nil {
 		cleanup3()
 		cleanup2()
 		cleanup()
 		return nil, nil, err
 	}
-	return server, func() {
+	return grpcServer, func() {
 		cleanup4()
 		cleanup3()
 		cleanup2()

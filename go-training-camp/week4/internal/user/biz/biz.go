@@ -24,7 +24,7 @@ type UserBiz struct {
 }
 
 func NewUserBiz(repo UserRepo) (*UserBiz, func(), error) {
-	return &UserBiz{repo: repo}, nil, nil
+	return &UserBiz{repo: repo}, func() {}, nil
 }
 
 func (ub *UserBiz) CreateUser(ctx context.Context, do *UserDO) (int64, error) {
