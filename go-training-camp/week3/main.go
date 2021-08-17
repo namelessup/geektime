@@ -57,9 +57,12 @@ func main() {
 		signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 		<-quit
 		log.Println("接收到正常退出信号！开始关闭服务")
-		_ = srv.Shutdown(ctx)
+		ctx1, cancel := context.WithDeadline(context.Background(), time.Now().Add(10*time.Second))
+		err := srv.Shutdown(ctx1)
+		log.Println("http: ", err)
 		log.Println("http服务关闭完成")
 
+		cancel()
 		s2.close()
 		log.Println("server2服务关闭完成")
 		return nil
